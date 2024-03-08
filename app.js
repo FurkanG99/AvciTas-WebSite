@@ -154,3 +154,25 @@ const touchSlide = (() => {
     // call mobile on touch end
     slider.addEventListener("touchend", mobile)
 })()
+
+window.onload = function() {
+    adjustFlagSize();
+    window.addEventListener('resize', adjustFlagSize);
+};
+
+
+window.onload = function() {
+    adjustFlagSize();
+    window.addEventListener('resize', adjustFlagSize);
+};
+
+function adjustFlagSize() {
+    var flagContainer = document.querySelector('.site-header img');
+    var flag = document.querySelector('.flag');
+
+    var containerWidth = flagContainer.offsetWidth;
+    var containerHeight = flagContainer.offsetHeight;
+
+    var aspectRatio = 3/ 2; // Türk bayrağı genellikle 3:2 en boy oranına sahiptir
+
+}
