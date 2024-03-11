@@ -17,7 +17,7 @@ const slide = (condition) => {
 
     condition === "increase" ? initiateINC() : initiateDEC()
 
-    // move(value, trailValue)
+    move(value, trailValue)
 
     animate()
 
