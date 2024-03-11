@@ -8,7 +8,7 @@ let value = 0
 
 let trailValue = 0
 
-let interval = 6000
+let interval = 10000
 
 
 const slide = (condition) => {

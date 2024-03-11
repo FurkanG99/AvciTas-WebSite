@@ -357,23 +357,11 @@ body {
 .active {
   opacity: 1 !important;
 }
-.flag {
-  background-image: url('/source/turkBayrak.png');
-  height: 100px; /* Otomatik yükseklik ayarı */
-  max-height: 100px; /* Bayrağın maksimum yüksekliği yüzdeye ayarlanmıştır */
-  animation: wave 2s infinite linear;
-  background-repeat: no-repeat;
-}
 
-.flag-container {
-  position: relative;
-  width: 200px; /* Bayrağın genişliği yüzdeye ayarlanmıştır */
-  height: 200px; /* Bayrağın yüksekliği yüzdeye ayarlanmıştır */
-  margin: auto;
-  background-color: white;
-  border: red;
-  left: 0;
-  
+.site-heaer{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 @keyframes wave {
