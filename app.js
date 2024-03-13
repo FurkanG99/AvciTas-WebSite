@@ -1,174 +1,168 @@
+var swiper = new Swiper(".swiper", {
+  effect: "cards",
+  grabCursor: true,
+  initialSlide: 2,
+  speed: 500,
+  loop: true,
+  rotate: true,
+  mousewheel: {
+  invert: false,
+},
+});
 
-const slider = document.querySelector(".slider")
 
-const trail = document.querySelector(".trail").querySelectorAll("div")
+var modal = document.getElementById("myModal1");
+var btn = document.getElementById("btn1");
+var span = document.getElementsByClassName("close")[0];
 
-
-let value = 0
-
-let trailValue = 0
-
-let interval = 10000
-
-
-const slide = (condition) => {
-
-    clearInterval(start)
-
-    condition === "increase" ? initiateINC() : initiateDEC()
-
-    move(value, trailValue)
-
-    animate()
-
-    start = setInterval(() => slide("increase"), interval);
+btn.onclick = function() {
+  modal.style.display = "block";
 }
 
-const initiateINC = () => {
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
-    trail.forEach(cur => cur.classList.remove("active"))
-
-    value === 80 ? value = 0 : value += 20
-
-    trailUpdate()
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 
-const initiateDEC = () => {
+var modal2 = document.getElementById("myModal2");
+var btn2 = document.getElementById("btn2");
+var span2 = document.getElementsByClassName("close2")[0];
 
-    trail.forEach(cur => cur.classList.remove("active"))
-    value === 0 ? value = 80 : value -= 20
-
-    trailUpdate()
+btn2.onclick = function() {
+  modal2.style.display = "block";
 }
 
-const move = (S, T) => {
-
-    slider.style.transform = `translateX(-${S}%)`
-
-    trail[T].classList.add("active")
+span2.onclick = function() {
+  modal2.style.display = "none";
 }
 
-const tl = gsap.timeline({defaults: {duration: 0.6, ease: "power2.inOut"}})
-tl.from(".bg", {x: "-100%", opacity: 0})
-  .from("p", {opacity: 0}, "-=0.3")
-  .from("h1", {opacity: 0, y: "30px"}, "-=0.3")
-  .from("button", {opacity: 0, y: "-40px"}, "-=0.8")
-
-// function to restart animation
-const animate = () => tl.restart()
-
-
-const trailUpdate = () => {
-    if (value === 0) {
-        trailValue = 0
-    } else if (value === 20) {
-        trailValue = 1
-    } else if (value === 40) {
-        trailValue = 2
-    } else if (value === 60) {
-        trailValue = 3
-    } else {
-        trailValue = 4
-    }
-}   
-
-// Start interval for slides
-let start = setInterval(() => slide("increase"), interval)
-
-
-document.querySelectorAll("svg").forEach(cur => {
-
-    cur.addEventListener("click", () => cur.classList.contains("next") ? slide("increase") : slide("decrease"))
-})
-
-
-const clickCheck = (e) => {
-
-    clearInterval(start)
-
-    trail.forEach(cur => cur.classList.remove("active"))
-
-    const check = e.target
-
-    check.classList.add("active")
-
-
-    if(check.classList.contains("box1")) {
-        value = 0
-    } else if (check.classList.contains("box2")) {
-        value = 20
-    } else if (check.classList.contains("box3")) {
-        value = 40
-    } else if (check.classList.contains("box4")) {
-        value = 60
-    } else {
-        value = 80
-    }
-    // update trail based on value
-    trailUpdate()
-    // transfrom slide
-    move(value, trailValue)
-    // start animation
-    animate()
-    // start interval
-    start = setInterval(() => slide("increase"), interval)
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
 }
 
 
-//MOBİL JS
-trail.forEach(cur => cur.addEventListener("click", (ev) => clickCheck(ev)))
+var modal3 = document.getElementById("myModal3");
+var btn3 = document.getElementById("btn3");
+var span3 = document.getElementsByClassName("close3")[0];
 
-const touchSlide = (() => {
-    let start, move, change, sliderWidth
-
-
-    slider.addEventListener("touchstart", (e) => {
-    
-        start = e.touches[0].clientX
-      
-        sliderWidth = slider.clientWidth/trail.length
-    })
-    
-
-    slider.addEventListener("touchmove", (e) => {
-   
-        e.preventDefault()
-        
-        move = e.touches[0].clientX
-       
-        change = start - move
-    })
-
-    const mobile = (e) => {
-        
-        change > (sliderWidth/4)  ? slide("increase") : null;
-        
-        (change * -1) > (sliderWidth/4) ? slide("decrease") : null;
-        
-        [start, move, change, sliderWidth] = [0,0,0,0]
-    }
-    
-    slider.addEventListener("touchend", mobile)
-})()
-
-window.onload = function() {
-    adjustFlagSize();
-    window.addEventListener('resize', adjustFlagSize);
-};
-
-
-window.onload = function() {
-    adjustFlagSize();
-    window.addEventListener('resize', adjustFlagSize);
-};
-
-function adjustFlagSize() {
-    var flagContainer = document.querySelector('.site-header img');
-    var flag = document.querySelector('.flag');
-
-    var containerWidth = flagContainer.offsetWidth;
-    var containerHeight = flagContainer.offsetHeight;
-
-    var aspectRatio = 3/ 2; 
+btn3.onclick = function() {
+  modal3.style.display = "block";
 }
+
+span3.onclick = function() {
+  modal3.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal3.style.display = "none";
+  }
+}
+
+
+var modal4 = document.getElementById("myModal4");
+var btn4 = document.getElementById("btn4");
+var span4 = document.getElementsByClassName("close4")[0];
+
+btn4.onclick = function() {
+  modal4.style.display = "block";
+}
+
+span4.onclick = function() {
+  modal4.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal4.style.display = "none";
+  }
+}
+
+
+
+var modal5 = document.getElementById("myModal5");
+var btn5 = document.getElementById("btn5");
+var span5 = document.getElementsByClassName("close5")[0];
+
+btn5.onclick = function() {
+  modal5.style.display = "block";
+}
+
+span5.onclick = function() {
+  modal5.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal5.style.display = "none";
+  }
+}
+
+
+var modal6 = document.getElementById("myModal6");
+var btn6 = document.getElementById("btn6");
+var span6 = document.getElementsByClassName("close6")[0];
+
+btn6.onclick = function() {
+  modal6.style.display = "block";
+}
+
+span6.onclick = function() {
+  modal6.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal6.style.display = "none";
+  }
+}
+
+var modal7 = document.getElementById("myModal7");
+var btn7 = document.getElementById("btn7");
+var span7 = document.getElementsByClassName("close7")[0];
+
+btn7.onclick = function() {
+  modal7.style.display = "block";
+}
+
+span7.onclick = function() {
+  modal7.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal7.style.display = "none";
+  }
+}
+
+
+var modal8 = document.getElementById("myModal8");
+var btn8 = document.getElementById("btn8");
+var span8 = document.getElementsByClassName("close8")[0];
+
+btn8.onclick = function() {
+  modal8.style.display = "block";
+}
+
+span8.onclick = function() {
+  modal8.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal8) {
+    modal8.style.display = "none";
+  }
+}
+
+
+// SCROLL REVEAL ANİMATİONS
+
+ScrollReveal().reveal('main-section')
