@@ -79,7 +79,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
+  margin-right: 370px;
 }
 
 .contact-sub-title{
@@ -88,12 +88,7 @@ body {
   font-size: 15px;
   margin-bottom: 60px;
 }
-.contact .contact-info-item{
-  flex: 0 0 25%;
-  max-width: 25%;
-  text-align: center;
-  margin-bottom: 60px;
-}
+
 .contact .contact-info-item .icon{
   display: inline-block;
 }
@@ -106,7 +101,6 @@ body {
   font-weight: 700;
   color: var(--text-black-900);
   text-transform: capitalize;
-  margin: 15px 0 5px;
 }
 .contact-info-item h4{
   color: var(--text-black-700) !important; 
